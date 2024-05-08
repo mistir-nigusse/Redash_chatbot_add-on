@@ -1,0 +1,6 @@
+Redash_chatbot_add-on
+     |__ data
+     |__models
+     |__notebook
+          |__ data_preprocessing.ipynb
+     |__Redash
