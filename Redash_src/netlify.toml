@@ -1,0 +1,48 @@
+[build]
+  base    = "client"
+  publish = "client/dist"
+  # Netlify doesn't seem to install Yarn even though NETLIFY_USE_YARN is set below
+  # command = "cd ../ && npm i -g yarn@1.22.19 && yarn --frozen-lockfile --force && cd viz-lib && yarn build:babel && cd .. && rm -r ./node_modules/@redash/viz && cp -r ./viz-lib/. ./node_modules/@redash/viz && yarn build && cd ./client"
+  command = "cd ../ && yarn cache clean && yarn --frozen-lockfile --network-concurrency 1 && yarn build && cd ./client"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NETLIFY_USE_YARN = "true"
+  YARN_VERSION = "1.22.19"
+  CYPRESS_INSTALL_BINARY = "0"
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://preview-backend.redashapp.com/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "http://preview-login.redashapp.com/login"
+  status = 200
+
+[[redirects]]
+  from = "/logout"
+  to = "http://preview-backend.redashapp.com/logout"
+  status = 200
+
+[[redirects]]
+  from = "/status.json"
+  to = "http://preview-backend.redashapp.com/status.json"
+  status = 200
+
+[[redirects]]
+  from = "/static/server*"
+  to = "http://preview-backend.redashapp.com/static/server:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/*"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

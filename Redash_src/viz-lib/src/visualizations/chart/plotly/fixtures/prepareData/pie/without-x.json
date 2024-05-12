@@ -1,0 +1,50 @@
+{
+  "input": {
+    "options": {
+      "globalSeriesType": "pie",
+      "seriesOptions": {},
+      "numberFormat": "0,0[.]00000",
+      "percentFormat": "0[.]00%",
+      "textFormat": "",
+      "showDataLabels": true,
+      "direction": { "type": "counterclockwise" },
+      "xAxis": { "type": "-", "labels": { "enabled": true } },
+      "yAxis": [{ "type": "linear" }, { "type": "linear", "opposite": true }],
+      "series": { "stacking": null, "error_y": { "type": "data", "visible": true } }
+    },
+    "data": [
+      {
+        "name": "a",
+        "data": [
+          { "x": "a1", "y": 10 },
+          { "x": "a2", "y": 60 },
+          { "x": "a3", "y": 100 },
+          { "x": "a4", "y": 30 }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "series": [
+      {
+        "visible": true,
+        "values": [200],
+        "labels": ["Slice 0"],
+        "type": "pie",
+        "hole": 0.4,
+        "marker": {
+          "colors": ["#356AFF"]
+        },
+        "hoverinfo": "text+label",
+        "hover": [],
+        "text": ["100% (200)"],
+        "textinfo": "percent",
+        "textposition": "inside",
+        "textfont": { "color": ["#ffffff"] },
+        "name": "a",
+        "direction": "counterclockwise",
+        "domain": { "x": [0, 0.98], "y": [0, 0.9] }
+      }
+    ]
+  }
+}
