@@ -8,4 +8,4 @@ class NewReturningViewers(Base):
     id = Column(Integer, primary_key=True)
     date = Column(Date)
     viewer_type = Column(String(50))
-    views = Column(Integer)
+    views = Column(String)

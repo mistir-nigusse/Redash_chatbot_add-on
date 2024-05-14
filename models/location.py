@@ -7,7 +7,8 @@ class Location(Base):
     __tablename__ = 'location'
     id = Column(Integer, primary_key=True)
     date = Column(Date)
-    city_code = Column(String(255))
+    cities = Column(String(255))
     city_name = Column(String(255))
-    country_code = Column(String(2))
-    views = Column(Integer)
+    views = Column(String)
+
+

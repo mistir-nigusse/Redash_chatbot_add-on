@@ -8,11 +8,11 @@ class Analytics(Base):
     id = Column(Integer, primary_key=True)
     date = Column(Date)
     content_type = Column(String(50))
+    views_content_type = Column(Integer)
     device_type = Column(String(50))
+    views_device_type = Column(Integer)
     operating_system = Column(String(50))
     sharing_service = Column(String(50))
     subscription_source = Column(String(50))
-    subscription_status = Column(String(50))
-    subtitles_cc = Column(Boolean)
-    traffic_source = Column(String(50))
-    views = Column(Integer)
+ 
+
